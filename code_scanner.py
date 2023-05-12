@@ -14,7 +14,12 @@ def read_code(filepath):
     Data= obj.data
     return Data
 
-# create_bar_code()
+def create_qr_code():
+    img=qrcode.make("https://www.youtube.com/")
+    print(type(img))
+    print(img.size)
+    img.save('/qrcodec.png')
+# create_bar_code()co
 # data = read_code("/barcodec.png")
 # print(data)
 # create_qr_code()
