@@ -1,6 +1,8 @@
 import qrcode
 import cv2 as cv
 from pyzbar.pyzbar import decode
+from barcode import EAN13
+from barcode.writer import ImageWriter
 
 def read_code(filepath): 
     img = cv.imread(filepath)
@@ -12,7 +14,9 @@ def read_code(filepath):
     Data= obj.data
     return Data
 
-
+def create_bar_code():
+    my_code = EAN13("5901234123457", writer=ImageWriter())
+    my_code.save("/barcodec")  
 
 
 def create_qr_code():
@@ -21,6 +25,9 @@ def create_qr_code():
     print(img.size)
     img.save('/qrcodec.png')
 
+# create_bar_code()
+# data = read_code("/barcodec.png")
+# print(data)
 # create_qr_code()
-data = read_code("generatedBarcode.png")
-print(data)
+# data = read_code("/qrcodec.png")
+# print(data)
