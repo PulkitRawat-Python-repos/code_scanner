@@ -23,8 +23,8 @@ def create_qr_code():
 def create_bar_code():
     my_code = EAN13("5901234123457", writer=ImageWriter())
     my_code.save("/barcodec")  
-    
-# create_bar_code()co
+
+# create_bar_code()
 # data = read_code("/barcodec.png")
 # print(data)
 # create_qr_code()
