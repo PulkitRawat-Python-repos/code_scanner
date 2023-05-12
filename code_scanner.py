@@ -1,4 +1,4 @@
-
+import qrcode
 import cv2 as cv
 from pyzbar.pyzbar import decode
 
@@ -12,8 +12,12 @@ def read_qr_code(filepath):
     Data= obj.data
     return Data
 
+def create_qr_code():
+    img=qrcode.make("https://www.youtube.com/")
+    print(type(img))
+    print(img.size)
+    img.save('/qrcodec.png')
 
-
-
-data = read_qr_code("qrcode.png")
+create_qr_code()
+data = read_qr_code("/qrcodec.png")
 print(data)
