@@ -11,8 +11,9 @@ def read_code(filepath):
         print("Type:",obj.type)
         print("Data:",obj.data,"/n")
     cv.imshow("code", img)
-    Data= obj.data
-    return Data
+    cv.waitkey(0)
+#     Data= obj.dat
+#     return Data
 
 def create_qr_code():
     img=qrcode.make("https://www.youtube.com/")
