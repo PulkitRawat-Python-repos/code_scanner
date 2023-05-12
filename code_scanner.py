@@ -19,6 +19,11 @@ def create_qr_code():
     print(type(img))
     print(img.size)
     img.save('/qrcodec.png')
+
+def create_bar_code():
+    my_code = EAN13("5901234123457", writer=ImageWriter())
+    my_code.save("/barcodec")  
+    
 # create_bar_code()co
 # data = read_code("/barcodec.png")
 # print(data)
