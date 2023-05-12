@@ -14,17 +14,6 @@ def read_code(filepath):
     Data= obj.data
     return Data
 
-def create_bar_code():
-    my_code = EAN13("5901234123457", writer=ImageWriter())
-    my_code.save("/barcodec")  
-
-
-def create_qr_code():
-    img=qrcode.make("https://www.youtube.com/")
-    print(type(img))
-    print(img.size)
-    img.save('/qrcodec.png')
-
 # create_bar_code()
 # data = read_code("/barcodec.png")
 # print(data)
