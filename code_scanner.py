@@ -3,6 +3,7 @@ import cv2 as cv
 from pyzbar.pyzbar import decode
 from barcode import EAN13
 from barcode.writer import ImageWriter
+import webbrowser
 
 def read_code(filepath): 
     img = cv.imread(filepath)
@@ -10,10 +11,10 @@ def read_code(filepath):
     for obj in scan:
         print("Type:",obj.type)
         print("Data:",obj.data,"/n")
-    cv.imshow("code", img)
-    cv.waitkey(0)
-#     Data= obj.dat
-#     return Data
+#     cv.imshow("code", img)
+#     cv.waitkey(0)
+    Data= obj.dat
+    return Data
 
 def create_qr_code():
     img=qrcode.make("https://www.youtube.com/")
@@ -31,3 +32,4 @@ def create_bar_code():
 # create_qr_code()
 # data = read_code("/qrcodec.png")
 # print(data)
+webbrowser.open(read_code("/qrcodec.png"))
