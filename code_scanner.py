@@ -13,7 +13,7 @@ def read_code(filepath):
         print("Data:",obj.data,"/n")
 #     cv.imshow("code", img)
 #     cv.waitkey(0)
-    Data= obj.dat
+    Data= obj.data
     return Data
 
 def create_qr_code():
